@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shared UI Showcase</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="assets/css/index.min.css">
+
+</head>
+<body class="sui-2-2-6">
+
+<div class="sui-wrap">
+
+    <h2>SUI Code Snippet standard element</h2>
+    <pre class="sui-code-snippet">
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    # add a trailing slash to /wp-admin
+    RewriteRule ^wp-admin$ wp-admin/ [R=301,L]
+    </pre>
+
+
+    <h2>SUI Code Snippet live element <span class="small">Not Showing Copy button?</span></h2>
+    <div class="my-container"></div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="assets/js/index.min.js"></script>
+<script type="text/javascript">
+    // create live element
+    $( document ).ready( function () {
+        var code_snippet = "<pre class=\"sui-code-snippet\">\n" +
+                           "    RewriteEngine On\n" +
+                           "    RewriteBase /\n" +
+                           "    RewriteRule ^index\\.php$ - [L]\n" +
+                           "    # add a trailing slash to /wp-admin\n" +
+                           "    RewriteRule ^wp-admin$ wp-admin/ [R=301,L]\n" +
+                           "    </pre>";
+
+        $( '.my-container' ).append( code_snippet );
+
+        /**
+         *  would be nice if i can do this:
+         *
+         *  SUI.initCodeSnippet(); or
+         *
+         *  SUI.initCodeSnippet($('.my-container.sui-code-snippet')); or
+         *
+         *  $('.my-container.sui-code-snippet').suiCodeSnippet();
+         *
+         */
+
+    } );
+</script>
+</body>
+</html>
